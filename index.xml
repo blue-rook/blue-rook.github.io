@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>https://blue-rook.github.io/</link>
+    <description>Recent content on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>email@example.com (Blue rook technology)</managingEditor>
+    <webMaster>email@example.com (Blue rook technology)</webMaster>
+    <lastBuildDate>Tue, 11 Feb 2025 23:45:00 +0000</lastBuildDate>
+    <atom:link href="https://blue-rook.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About ravens and rooks (blue)</title>
+      <link>https://blue-rook.github.io/blog/my-new-post/</link>
+      <pubDate>Tue, 11 Feb 2025 23:45:00 +0000</pubDate><author>email@example.com (Blue rook technology)</author>
+      <guid>https://blue-rook.github.io/blog/my-new-post/</guid>
+      <description>&lt;p&gt;Blue Rook Technology is a nimble business driven by a group of engineers from different backgrounds that are &lt;strong&gt;all about Data and AI solutions&lt;/strong&gt;. We deliver &lt;strong&gt;optimal solutions&lt;/strong&gt; for a diverse range of clients—from small health care centers to Brazil’s largest infrastructure players.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;our-home-base-florianópolis---sc&#34;&gt;Our Home Base: Florianópolis - SC&lt;/h2&gt;&#xA;&lt;p&gt;We call &lt;strong&gt;Florianópolis, SC&lt;/strong&gt; our home—a place officially hailed as the &lt;strong&gt;&amp;ldquo;Capital da Startup&amp;rdquo;&lt;/strong&gt;. Nestled on an island brimming with natural beauty and innovative potential, this strategic location has powered our journey since &lt;strong&gt;2022&lt;/strong&gt;, serving as a vibrant hub to connect with the best business partners and tech talent.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
