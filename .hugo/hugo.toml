@@ -1,0 +1,38 @@
+baseURL = "https://blue-rook.github.io/"
+languageCode = 'en-us'
+
+[module]
+[[module.imports]]
+  path = 'github.com/LordMathis/hugo-theme-nightfall'
+
+[menu]
+  [[menu.header]]
+    name = "posts"
+    weight = 0
+    url = "/blog/"
+
+[params]
+user = "bluerooktechnology"
+hostname = "gmail.com"
+  [params.author]
+    name = "Blue rook technology"  # Website and RSS feed author
+    email = "email@example.com"  # RSS feed email address
+
+
+readingTime = true  # Show reading time on post page
+published = true  # Show published data on post page
+
+ [[params.social]]
+    key = 1
+    name = "github"
+    url = "https://github.com/pedrogasparotti"
+
+  [[params.social]]
+    key = 2
+    name = "linkedin"
+    url = "https://www.linkedin.com/company/blue-rook-technology/about/"
+
+    [[params.social]]
+    key = 3
+    name = "work with us"
+    url = "https://www.linkedin.com/company/blue-rook-technology/jobs/?"
