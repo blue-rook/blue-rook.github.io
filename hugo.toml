@@ -1,0 +1,38 @@
+baseURL = "https://blue-rook.github.io/"
+languageCode = "en-us"
+
+[module]
+[[module.imports]]
+  path = "github.com/LordMathis/hugo-theme-nightfall"
+
+[menu]
+  [[menu.header]]
+    name = "posts"
+    weight = 0
+    url = "/blog/"
+
+[params]
+  user = "bluerooktechnology"
+  hostname = "gmail.com"
+  readingTime = true
+  published = true
+  footerHtml = "&copy; 2026 Blue rook technology"
+
+  [params.author]
+    name = "Blue rook technology"
+    email = "email@example.com"
+
+  [[params.social]]
+    key = 1
+    name = "github"
+    url = "https://github.com/pedrogasparotti"
+
+  [[params.social]]
+    key = 2
+    name = "linkedin"
+    url = "https://www.linkedin.com/company/blue-rook-technology/about/"
+
+  [[params.social]]
+    key = 3
+    name = "work with us"
+    url = "https://docs.google.com/forms/d/e/1FAIpQLScpsGKliGoC7_rJDbRBlKIgl2qzU8b8MSpd4DWmsgPh4HmBmA/viewform?usp=dialog"

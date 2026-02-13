@@ -1,41 +1,78 @@
-# github-page-maker
-Quickstarts the creation and publishing of [GitHub Pages](https://pages.github.com/) with [Hugo](https://gohugo.io/). Contributions are welcome!
-> Tutorial em português disponível [aqui](https://medium.com/@fernandomachado90/crie-sua-github-page-com-hugo-acf182c5bc86?sk=e058b508b877d25dfe74ee5fa31d65c6).
+# blue-rook.github.io
 
-## Requisites
+Blog for [Blue Rook Technology](https://blue-rook.github.io/), built with [Hugo](https://gohugo.io/) and the [Nightfall](https://github.com/LordMathis/hugo-theme-nightfall) theme.
 
-This **Makefile** assumes that you have: 
-- Open source distributed version control system [git](https://git-scm.com/downloads) properly configured.
-- Open-source static site generator [Hugo](https://gohugo.io/getting-started/installing/) installed. If you don't, simply run: `brew install hugo`
+## Prerequisites
 
-## Instructions
+- [Git](https://git-scm.com/downloads)
+- [Hugo](https://gohugo.io/installation/) (extended edition, v0.147+): `brew install hugo`
+- [Go](https://go.dev/dl/) (1.23+, for Hugo modules): `brew install go`
 
-- [Use this template](https://github.com/fernandomachado90/github-page-maker/generate) to create a new repository for your site.
-- The **Repository name** must be `username.github.io` (where `username` should be replaced with your **GitHub username**).
-- Clone the repository locally and **run the following commands** one by one to create and publish your page.
+## Local Development
 
-## Commands
+```bash
+make run              # Serve at http://localhost:1313 (live reload)
+make run-drafts       # Same, but includes draft posts
+```
 
-### `make new`                    
-Creates a new **Hugo** project.
+## Creating Content
 
-### `make add theme=[repository-url]`
-Includes the informed **Hugo theme** repository as a submodule. Find available themes [here](https://themes.gohugo.io/). 
+```bash
+make new name=my-post-slug
+# Edit content/blog/my-post-slug/index.md
+# Set draft = false when ready to publish
+```
 
-Make sure you update the configuration file at `.hugo/config.toml` with the selected theme settings. Most themes will include a reference file at `.hugo/themes/theme-name/exampleSite/config.toml` that you can copy to get started.
+Posts use TOML frontmatter (`+++`) and page bundle format.
 
-### `make update`                    
-Updates included themes.
+## Build & Clean
 
-### `make run`
-Serves website at http://localhost:1313.
+```bash
+make build            # Production build to public/
+make clean            # Remove build artifacts
+```
 
-### `make build`                    
-Builds deployable version of the website.
+## Deploying to GitHub Pages
 
-### `make publish`                    
-Creates a commit and pushes changes to repository.
+Deployment is fully automated via GitHub Actions. To set it up:
+
+1. **Push this repo** to GitHub as `<username>.github.io`.
+
+2. **Configure GitHub Pages source**:
+   - Go to **Settings > Pages** in your repository.
+   - Under **Build and deployment > Source**, select **GitHub Actions** (not "Deploy from a branch").
+
+3. **Push to `master`** — the workflow at `.github/workflows/hugo.yaml` will automatically build and deploy the site.
+
+That's it. Every push to `master` triggers a build and deploy. No build output is ever committed to the repo.
+
+### Workflow details
+
+The Actions workflow (`.github/workflows/hugo.yaml`):
+- Installs Hugo extended and Dart Sass
+- Runs `hugo --gc --minify`
+- Uploads the `public/` directory as a GitHub Pages artifact
+- Deploys to your `github.io` URL
+
+### Custom domain (optional)
+
+To use a custom domain:
+1. Add a `CNAME` file to `static/` containing your domain (e.g., `blog.example.com`).
+2. Configure DNS as described in [GitHub's custom domain docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+3. Update `baseURL` in `hugo.toml` to match.
+
+## Project Structure
+
+```
+hugo.toml                       # Site configuration
+content/blog/                   # Blog posts (page bundles)
+archetypes/default.md           # New post template
+static/                         # Static assets (favicon, images)
+layouts/                        # Theme template overrides
+.github/workflows/hugo.yaml     # CI/CD pipeline
+Makefile                        # Build automation
+```
 
 ## License
 
-2020 [MIT License](LICENSE).
+[MIT License](LICENSE)

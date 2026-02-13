@@ -3,37 +3,35 @@
 
 .PHONY: help
 help:
-	$(info github-page-maker:)
-	$(info -> new                         Creates a new Hugo project)
-	$(info -> add theme=[repository-url]  Adds Hugo theme as a submodule)
-	$(info -> update                      Updates included themes)
+	$(info blue-rook.github.io:)
 	$(info -> run                         Serves website at http://localhost:1313/)
-	$(info -> build                       Builds deployable version)
-	$(info -> publish                     Pushes changes to repository)
-
-.PHONY: new
-new:
-	hugo new site .hugo
-
-.PHONY: add
-add:
-	cd .hugo/themes &&	git submodule add $(theme)
-
-.PHONY: update
-update:
-	git submodule sync --recursive
-	git submodule update --init --recursive
+	$(info -> run-drafts                  Serves website including draft posts)
+	$(info -> build                       Builds deployable version to public/)
+	$(info -> clean                       Removes build artifacts)
+	$(info -> new name=[slug]             Creates a new blog post)
+	$(info -> update                      Updates Hugo modules)
 
 .PHONY: run
 run:
-	cd .hugo && hugo server
+	hugo server
+
+.PHONY: run-drafts
+run-drafts:
+	hugo server -D
 
 .PHONY: build
 build:
-	cd .hugo && hugo -d ..
+	hugo --gc --minify
 
-.PHONY: publish
-publish:
-	git add .
-	git commit -m "Publishing github-page-maker changes."
-	git push
+.PHONY: clean
+clean:
+	rm -rf public/ resources/_gen/
+
+.PHONY: new
+new:
+	hugo new content/blog/$(name)/index.md
+
+.PHONY: update
+update:
+	hugo mod get -u
+	hugo mod tidy
