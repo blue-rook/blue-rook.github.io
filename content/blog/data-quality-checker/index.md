@@ -1,5 +1,5 @@
 +++
-title = "Building a Lightweight Data Quality Checker with Python and Polars"
+title = "Building a Lightweight Data Quality Checker with Polars"
 date = "2026-02-12T12:00:00-03:00"
 draft = false
 description = "A walkthrough of data-quality-checker — a focused Python library for validating Polars DataFrames with built-in SQLite logging and a YAML-driven CLI."
