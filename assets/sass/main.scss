@@ -1,0 +1,34 @@
+@use "global";
+
+// utils
+@use "utils/variables";
+@use "utils/fonts";
+
+// components
+@use "components/footer";
+@use "components/header";
+@use "components/post";
+@use "components/social";
+
+// pages
+@use "pages/single";
+@use "pages/list";
+@use "pages/index";
+@use "pages/baseof";
+
+// overrides
+.postTitle {
+  color: #FFB3C1;
+}
+
+.postListItem a {
+  color: #FF6B2B;
+}
+
+.postExcerpt {
+  color: #f8f8ff;
+}
+
+.postDate {
+  color: #f8f8ff;
+}
