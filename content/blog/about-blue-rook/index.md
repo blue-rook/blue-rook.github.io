@@ -13,7 +13,7 @@ showMetadata = true
 
 Blue Rook Technology is a small, independent data consultancy. We are engineers first — people who enjoy solving hard problems with simple, well-crafted solutions. No layers of management, no bloated proposals, no enterprise theater. Just experienced practitioners who care deeply about the work.
 
-We chose the name "Blue Rook" because the rook is the most straightforward piece on the chessboard: it moves in clean, direct lines and becomes more powerful as the board clears. That is how we like to operate — cut through the noise, deliver value, move on.
+We chose the name "Blue Rook" after the bird — a striking corvid known for its intelligence, adaptability, and the way it thrives in tight-knit groups. Rooks are problem-solvers: resourceful, sharp, and remarkably effective when working together. That is the spirit we bring to every engagement.
 
 ## What we do
 
