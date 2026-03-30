@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+    <title>
+        {{ i18n "home" }} | {{ .Site.Params.author.name }}
+    </title>
+
+    {{ partial "head.html" . }}
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        {{ partial "header.html" . }}
+
+        <div class="content vertical">
+            <main class="main">
+                <div class="indexWrapper">
+                    <div>
+                        <h1 class="indexHeader">{{ .Site.Params.author.name }}</h1>
+                    </div>
+                    {{ if .Site.Params.author.avatar }}
+                        <div class="authorImageWrapper">
+                            <img
+                                src="{{ .Site.Params.author.avatar }}"
+                                alt="{{ .Site.Params.author.name }}"
+                                class="{{ .Site.Params.author.avatarSize | default "size-m" }}"
+                            />
+                        </div>
+                    {{ end }}
+                    {{ if isset .Site.Params "social" }}
+                        {{ partial "social.html" . }}
+                    {{ end }}
+                </div>
+
+                <div>
+                    {{ range where .Site.RegularPages "Type" "blog" }}
+                    <a class="postListLink" href="{{ .Permalink }}">
+                        <div class="postListItem" role="listitem">
+                            <div class="postHeader">
+                                <span class="postTitle">{{ .Title }}</span>
+                                {{ $formattedDate := .Date.Format "2006-01-02" }}
+                                <time class="postDate" datetime="{{ $formattedDate }}">{{ .Date | time.Format ":date_long" }}</time>
+                            </div>
+                            <div class="postExcerpt">
+                                <p>{{ .Summary }}</p>
+                            </div>
+                        </div>
+                    </a>
+                    {{ end }}
+                </div>
+            </main>
+        </div>
+
+        {{ partial "footer.html" . }}
+    </div>
+
+</body>
+
+</html>
